@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Heat Sink Thermal Resistance Calculator
-This script calculates the thermal resistance requirement for a heat sink
+This script calculates the required thermal resistance of a heat sink
 used to dissipate heat from power electronics (voltage regulators, power
 amplifiers, power-switching circuits etc.).
 
@@ -8,21 +8,21 @@ Thermal management typically involves passive cooling (conducting the heat to a
 heatsink or to the metal case of a device) and active cooling (forced air or 
 pumped liquid).
 
-Thermal resistance (Rtheta) = heat rise (C)/power transferred (W)
+Thermal resistance (Rtheta) = heat rise (degrees C)/power transferred (W)
 
-Example: Power supply linear regulator heat sink
-         Power supply (unregulated 8 V, 1 A (full load))
-         LM317 linear regulator (4.7 V drop, 1A = 4.7W)
-            - Rjc = 4 celcius/W (junction to case)
-            - Rcs = 0.5 celcius/W (case to heatsink) T0-220
-         Operate up to 50 degree celcius ambient
-         Junction temp = 100 degrees C << max. temp 150 degrees C
+Example: Heatsink for linear regulator for a 3.3 V power supply
+            Power supply (unregulated 8 V, 1 A (full load))
+            LM317 linear regulator (4.7 V drop, 1 A = 4.7 W)
+                - Rjc = 4 celsius/W (junction to case)
+                - Rcs = 0.5 celsius/W (case to heatsink) T0-220
+            Operate up to 50 celsius ambient temperature
+            Junction temperature = 100 celsius << max. temp 150 celsius
 
-         Rja = (Tj - Ta)/P = 10.64 degree C/W
-         Rsa = Rja - Rjc - Rcs = 6.14 degree C/W
+            Rja = (Tj - Ta)/P = 10.64 degrees C/W
+            Rsa = Rja - Rjc - Rcs = 6.14 degrees C/W
 
-# NOTE: use thermocouple/thermistor or infrared temperature probe to verify
-# calculations
+NOTE: use a thermocouple/thermistor or infrared temperature probe to verify
+the results of any design calculations
 
 """
 
